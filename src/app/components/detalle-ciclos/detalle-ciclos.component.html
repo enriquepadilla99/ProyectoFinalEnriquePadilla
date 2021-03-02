@@ -1,0 +1,63 @@
+<div class="row">
+            <div class="col">
+
+            <img
+                [src]="img"
+                class="img-thumbnail mt-3"
+                style="width: 15rem; height: 10rem"
+                alt="..."/>
+
+            <br/><br/><h2>{{ cicloSecun }} {{ cursoSecun }}</h2> 
+
+           <br/> <h3 style="text-decoration: overline;">Conocimientos necesarios:</h3> <br/>
+
+            <div *ngFor="let item of conoFiltrado">
+
+                <ul class="list-group">
+                <li *ngFor="let items of item.conocimientos">
+                    {{ items.nombre }}
+                </li>
+                </ul>
+
+            </div>
+            </div>
+
+            <div class="col">
+
+            <h1 class="mt-3">Las asignaturas del ciclo son:</h1><br>
+
+            <div class="row">
+
+                <div class="col"  *ngFor="let item of conoFiltrado">
+
+            <div class="card" style="
+            width: 14rem;
+            border-radius: 20px;
+            margin-bottom: 10px; 
+            -webkit-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+            -moz-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+            box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);">
+
+            <div class="card-body">
+
+               <i> <h5 class="card-title">{{ item.nombre }}</h5> </i>
+
+                <b>Profesor:</b> {{ item.profesor }}<br/>
+                <b>Ciclo:</b> {{ item.ciclo }}<br/>
+                <b>Curso:</b>{{ item.curso }}<br/>
+
+                <div *ngFor="let itemC of item.conocimientos">
+                <img
+                    [src]="itemC.imagen"
+                    class="img-thumbnail"
+                    style="width: 5rem; height: 5rem"
+                    alt="..."
+                />
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,34 @@
+<div class="card" style="width: 15rem">
+  <div class="card-body" 
+  style="
+    -webkit-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+    box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+    border-radius: 30px;
+  ">
+
+    <b><i><h5 class="card-title">{{ asignatura.nombre }}</h5></i><br/></b>
+
+    <b> Profesor: {{ asignatura.profesor }}</b> <br/>
+    <b> Ciclo: {{ asignatura.ciclo }}</b> <br/>
+    <b> Curso: {{ asignatura.curso }}</b> <br/>
+
+    <div *ngFor="let conocimiento of asignatura.conocimientos">
+
+      <img
+        [src]="conocimiento.imagen"
+        class="img-thumbnail"
+        style="
+        width: 8rem; 
+        height: 8rem; 
+        margin: 1rem;
+        padding: 1rem;
+        -webkit-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+        -moz-box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+        box-shadow: 16px 16px 56px -14px rgba(0,0,0,0.75);
+        "
+        alt="..."/>
+        
+    </div>
+  </div>
+</div>
